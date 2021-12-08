@@ -1,194 +1,138 @@
-// const http = require('http');
-
-// //create a server object:
-// // http.createServer(function (req, res) {
-// //   res.write('Hello World!'); //write a response to the client
-// //   res.end(); //end the response
-// // }).listen(8080); //the server object listens on port 8080
-
-
-// const sever = http.createServer((req,res)=>{
-// res.end("hello from th other side");
-
-
-// });
-// sever.listen(8000,"127.0.0.1",()=>{console.log("listning to the port number 8000");
-// });
-
-
-
-
-// const express= require("express");
-// let app = express();
-
-
-// app.get('/', function(req,res){
-//   res.send("hello world");
-// });
-
-// app.listen(3000);
-
-
-
-
-// app.get('/', function (req, res) {
-//   res.send('Hello World!')
-// })
-
-// app.post('/', function (req, res) {
-//   res.send('Got a POST request')
-// })
-
-// app.put('/user', function (req, res) {
-//   res.send('Got a PUT request at /user')
-// })
-
-// app.delete('/user', function (req, res) {
-//   res.send('Got a DELETE request at /user')
-// })
-
-
-// const express = require('express')
-// // const path = require('path')
-// const app = express()
-// // const port = 3000
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
-// app.get('/aboutUs', (req, res) => {
-//   res.send('about')
-// res.sendFile(path.join(__dirname,'index.html'))
-
-// })
-
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`)
-// })
-
-// const express = require('express')
-// const bodyparser = require('body-parser')
-// const app = express()
-// const port = 3000
-
-// app.use(express.json())
-
-// app.get('/', function (req, res) {
-  // res.send('Hello World!')
-
-  //console.log(req);
-// res.send(req.query)
-
-// })
-//Respond to POST request on the root route (/), the application’s home page:
-
-// app.post('/', function (req, res) {
-  // let users={
-  //   "firstName": "Rack",
-  //   "lastName": "Jackon",
-  //   "gender": "man",
-  //   "age": 24,
-  //   "address": "streetAddres126",
-        
-  //   }
-  // res.use(req.body.users);
- 
-    
-  // res.json([{
-  //   "firstName": "Rack",
-  //   "lastName": "Jackon",
-  //   "gender": "man",
-  //   "age": 24,
-  //   "address": "streetAddres126",
-        
-  //   }])
-  //   console.log(req.body);
-  
-  // })
-//Respond to a PUT request to the /user route:
-
-// app.put('/user', function (req, res) {
-//   res.send('Got a PUT request at /user')
-// })
-//Respond to a DELETE request to the /user route:
-
-// app.delete('/user', function (req, res) {
-//   res.send('Got a DELETE request at /user')
-// })
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`)
-//   })
-
-
-//   const express = require('express')
-//   const path = require('path')
-// const app = express()
-// const port = 3000
-
-//app.use(express.static(path.join(__dirname,"public")))
-
-// app.get('/', function (req, res) {
-  //res.send('Hello World!')
-  // res.sendFile(path.join(__dirname,'index.html'))
-   // res.json({"firstname":"priyanka",
-             // "lastname":"choudhary","age":27,"learning":"javaScript"})
-
-
-
-// })
-//Respond to POST request on the root route (/), the application’s home page:
-
-// app.post('/', function (req, res) {
-  // res.send('Got a POST request')
-// })
-//Respond to a PUT request to the /user route:
-
-// app.put('/user', function (req, res) {
-  // res.send('Got a PUT request at /user')
-// })
-//Respond to a DELETE request to the /user route:
-
-// app.delete('/user', function (req, res) {
-  // res.send('Got a DELETE request at /user')
-// })
-// app.listen(port, () => {
-    // console.log(`Example app listening at http://localhost:${port}`)
-  // })
-
-
-// var currTime=new Date();
-//   console.log(currTime);
-
-
 const express=require("express");
 const app=express();
-//const bodyparser=require("body-parser");
 
-// const port=3000;
+app.use(express.json());
+const students=[{
+    "id": 1,
+    "first_name": "Christoph",
+    "last_name": "Bedbrough",
+    "email": "cbedbrough0@wikia.com"
+  }, {
+    "id": 2,
+    "first_name": "Thibaut",
+    "last_name": "Dubs",
+    "email": "tdubs1@hud.gov"
+  }, {
+    "id": 3,
+    "first_name": "Arden",
+    "last_name": "Di Claudio",
+    "email": "adiclaudio2@google.cn"
+  }, {
+    "id": 4,
+    "first_name": "Kellyann",
+    "last_name": "Scoggin",
+    "email": "kscoggin3@msu.edu"
+  }, {
+    "id": 5,
+    "first_name": "Whitby",
+    "last_name": "Spadari",
+    "email": "wspadari4@php.net"
+  }, {
+    "id": 6,
+    "first_name": "Joice",
+    "last_name": "Lightbody",
+    "email": "jlightbody5@ft.com"
+  }, {
+    "id": 7,
+    "first_name": "Enoch",
+    "last_name": "Rubenczyk",
+    "email": "erubenczyk6@parallels.com"
+  }, {
+    "id": 8,
+    "first_name": "Winifield",
+    "last_name": "Guillard",
+    "email": "wguillard7@squarespace.com"
+  }, {
+    "id": 9,
+    "first_name": "Dominik",
+    "last_name": "Bengochea",
+    "email": "dbengochea8@instagram.com"
+  }, {
+    "id": 10,
+    "first_name": "Zondra",
+    "last_name": "Ravenscroft",
+    "email": "zravenscroft9@apache.org"
+  }]
 
-
-
-app.get('/',(res,req)=>{
-
-res.send('hello world!');
+// app.use(express.json());
+app.get('/',(req,res)=>{
+res.send("welcome.....")
 });
 
-// app.get('/page2',(res,req)=>{
-//     res.send('this is about us page.');
+app.get('/api/students',(req,res)=>{
+res.json(students)
+});
 
-// });
+app.post('/api/students',(req,res)=>{
+    // console.log(req.body)
+    if(!req.body.email){
+        res.status(400)
+        return res.send("email is required")
+    }
+    if(!req.body.first_name||req.body.first_name.length<4){
+        res.status(400)
+        return res.send("name is required and should be minimum 4 characters long.")
+    }
+    if(!req.body.last_name||req.body.last_name.length<3){
+        res.status(400)
+        return res.send("name is required and should be minimum 3 characters long.")
+    }
+const user={
+        id:students.length +1,
+        first_name:req.body.first_name,
+        last_name:req.body.last_name,
+        email:req.body.email
+            };
 
-// app.get('/page2/linkto.2',(res,req)=>{
-// res.send({firstname:"priyanka",
-//           lastname:"choudhary"
-
-// })
-
-// })
+    students.push(user);
+res.json(user);
+    // res.send("students post request")
+    });
 
 
 
-app.listen(3000,()=>console.log("listeing to port 3000..."))
+app.put('/api/students/:id',(req,res)=>{
+    const id=req.params.id;
+    let first_name=req.body.first_name
+    let last_name=req.body.last_name
+    let email=req.body.email
+
+let index=students.findIndex((student)=>{
+        return(student.id==Number.parseInt(id))
+
+});
+// console.log(id, req.body, index)
+
+  if(index>=0){
+      const std=students[index]
+      std.last_name=last_name
+      std.first_name=first_name
+      std.email=email
+      res.json(std)
+  }else{
+      res.status(404)
+      
+  }// console.log(id);
+    // res.json(id);
+});
+
+
+
+app.delete('/api/students/:id',(req,res)=>{
+let id=req.params.id;
+let index=students.findIndex((student)=>{
+    return(student.id==Number.parseInt(id))
+});
+
+if(index>=0){
+    let std=students[index];
+    students.splice(index,1);
+        res.json(std);
+}else{
+    res.status(404);
+};
+
+});
 
 
 
@@ -200,3 +144,19 @@ app.listen(3000,()=>console.log("listeing to port 3000..."))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.listen(3000,()=>console.log('listening to port 3000....'))
